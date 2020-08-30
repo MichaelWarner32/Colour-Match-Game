@@ -1,0 +1,33 @@
+<div class="machineContainer">
+        <div id="blueButton" class="fourButtons"></div>
+        <div id="greenButton" class="fourButtons"></div>
+        <div id="redButton" class="fourButtons"></div>
+        <div id="yellowButton" class="fourButtons"></div>
+        <div id="middle">
+            <div id="title">Simon</div>
+            <div id="moveCounter">
+            <div id="moveDisplay">
+            <div id="textDisplay">
+                --
+            </div>
+            </div>
+            <div id="moveText">Moves</div>
+        </div>
+        <div id="startBox">
+            <div id="startButton"></div>
+            <div id="startText">Start</div>
+        </div>
+        <div id="oneLifeBox">
+            <div id="oneLifeButton"></div>
+            <div id="oneLifeText">One Life</div>
+        </div>
+        <div id="powerBox">
+            <div id="onText">ON</div>
+            <div id="powerSwitch">
+            <div id="onButton"></div>
+            <div id="offButton"></div>
+            </div>
+            <div id="offText">OFF</div>
+        </div>
+        </div>
+        </div>

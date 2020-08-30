@@ -192,13 +192,14 @@ body {
 }
 
 #offButton {
-    background: blue;
-    vertical-align: top;
+    background-color: blue;
     display: inline-block;
     border-radius: 15%;
-    margin: 1px 0px 0px 0px;
+    margin: 1px 3px 0px 1px;
     height: 10px;
     width: 12px;
+    vertical-align: top;
+   
 }
 
 #offText {
