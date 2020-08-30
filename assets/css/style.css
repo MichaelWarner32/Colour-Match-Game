@@ -94,7 +94,7 @@ body {
 #moveText {
     height: 30%;
     margin: 4px 6px 0px 6px;
-    font-size: 12px;
+    font-size: 11px;
     color: #000;
     font-weight: bold;
     text-align: center;
@@ -125,7 +125,34 @@ body {
 #startText {
     height: 30%;
     margin: 4px 6px 0px 6px;
-    font-size: 12px;
+    font-size: 11px;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+}
+
+#oneLifeBox {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    vertical-align: top;
+}
+
+#oneLifeButton {
+    border: solid 2px #000;
+    border-radius: 50%;
+    height: 50%;
+    margin: 0px 12px 0px 12px;
+    background-color: red;
+    font-size: 25px;
+    line-height: 25px;
+    text-align: center;
+}
+
+#oneLifeText {
+    height: 30%;
+    margin: 4px 6px 0px 6px;
+    font-size: 11px;
     color: #000;
     font-weight: bold;
     text-align: center;
