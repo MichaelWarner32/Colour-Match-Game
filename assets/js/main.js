@@ -32,6 +32,6 @@ $("#powerSwitch").on("click", function() {
         $("#offButton").css("visibility", "visible");
         $("#textDisplay").css("opacity", "1");
         power = "off";
-        
+
     }
-})
+});
