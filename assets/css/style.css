@@ -157,3 +157,37 @@ body {
     font-weight: bold;
     text-align: center;
 }
+
+#onText {
+    display: inline-block;
+    height: 40px;
+    line-height: 25px;
+    width: 60px;
+    font-size: 11px;
+    color: #000;
+    font-weight: bold;
+    text-align: right;
+    vertical-align: top;
+}
+
+#powerSwitch {
+    background-color: grey;
+    display: inline-block;
+    border: solid 2px #000;
+    margin-top: 6px;
+    height: 15px;
+    width: 30px;
+    vertical-align: top;
+}
+
+#onButton {
+    background-color: blue;
+    display: inline-block;
+    border-radius: 15%;
+    margin: 1px 3px 0px 1px;
+    height: 10px;
+    width: 12px;
+    vertical-align: top;
+    visibility: hidden;
+}
+
