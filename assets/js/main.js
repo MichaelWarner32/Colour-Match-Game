@@ -22,10 +22,10 @@ var yellow = new buttonColor(4, "yellow");
 
 $("#powerSwitch").on("click", function() {
     if (power == "off") {
-    $("#bnoButton").css("visibility", "visible");
+    $("#onButton").css("visibility", "visible");
     $("#offButton").css("visibility", "hidden");
     $("#textDisplay").css("opacity", "1");
-    powe = "on";
+    power = "on";
     }
     else if (power == "on") {
         $("#onButton").css ("visibility", "hidden");
