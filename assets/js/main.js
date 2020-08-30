@@ -20,3 +20,18 @@ var green = new buttonColor(2, "green");
 var red = new buttonColor(3, "red");
 var yellow = new buttonColor(4, "yellow");
 
+$("#powerSwitch").on("click", function() {
+    if (power == "off") {
+    $("#bnoButton").css("visibility", "visible");
+    $("#offButton").css("visibility", "hidden");
+    $("#textDisplay").css("opacity", "1");
+    powe = "on";
+    }
+    else if (power == "on") {
+        $("#onButton").css ("visibility", "hidden");
+        $("#offButton").css("visibility", "visible");
+        $("#textDisplay").css("opacity", "1");
+        power = "off";
+        
+    }
+})
