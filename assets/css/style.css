@@ -171,34 +171,32 @@ body {
 }
 
 #powerSwitch {
-    background-color: grey;
-    display: inline-block;
-    border: solid 2px #000;
-    margin-top: 6px;
-    height: 15px;
-    width: 30px;
-    vertical-align: top;
+  background: grey;
+  vertical-align: top;
+  display: inline-block;
+  border: solid 1px black;
+  margin-top: 5px;
+  height: 15px;
+  width: 30px;
 }
-
 #onButton {
-    background-color: blue;
-    display: inline-block;
-    border-radius: 15%;
-    margin: 1px 3px 0px 1px;
-    height: 10px;
-    width: 12px;
-    vertical-align: top;
-    visibility: hidden;
+  visibility: hidden;
+  background: blue;
+  vertical-align: top;
+  display: inline-block;
+  border-radius: 15%;
+  margin: 1px 2.8px 0px 1px;
+  height: 10px;
+  width: 12px;
 }
-
 #offButton {
-    background: blue;
-    vertical-align: top;
-    display: inline-block;
-    border-radius: 15%;
-    margin: 1px 0px 0px 0px;
-    height: 10px;
-    width: 12px;
+  background: blue;
+  vertical-align: top;
+  display: inline-block;
+  border-radius: 15%;
+  margin: 1px 0px 0px 0px;
+  height: 10px;
+  width: 12px;
 }
 
 #offText {
