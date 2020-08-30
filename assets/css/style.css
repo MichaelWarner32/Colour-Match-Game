@@ -72,3 +72,31 @@ body {
     font-size: 45px;
     color: #000000; 
 }
+
+#moveCounter {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    vertical-align: top;
+}
+
+#moveDisplay {
+    border: solid 2px #000; 
+    border-radius: 20%;
+    height: 50%;
+    margin: 0px 6px 0px 6px;
+    background-color: orange;
+    font-size: 25px;
+    line-height: 25px;
+    text-align: center;
+}
+
+#moveText {
+    height: 30%;
+    margin: 4px 6px 0px 6px;
+    font-size: 12px;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+}
+
