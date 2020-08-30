@@ -3,7 +3,7 @@ body {
     background-color: #000000;
 }
 
-.gameContainer {
+.machineContainer {
     position: relative;
     width: 440px;
     height: 440px;
@@ -12,4 +12,11 @@ body {
     border: solid 2px white;
     border-radius: 50%;
     background-color: grey;
+}
+
+.fourButtons {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
 }
