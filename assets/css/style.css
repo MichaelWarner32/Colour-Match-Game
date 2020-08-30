@@ -53,3 +53,22 @@ body {
     border-radius: 0 0 100% 0;
 }
 
+#middle {
+    position: absolute;
+    background-color: #fff;
+    border: 20px solid grey;
+    width: 200px;
+    height: 200px;
+    top: 120px;
+    left: 120px;
+    border-radius: 50%;
+}
+
+#title {
+    height: 70px;
+    line-height: 90px;
+    width: 100%;
+    text-align: center;
+    font-size: 45px;
+    color: #000000; 
+}
