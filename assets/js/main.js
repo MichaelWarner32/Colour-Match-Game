@@ -37,7 +37,7 @@ else if (power == "on") {
     $("#textDisplay").css("opacity", "0.2");
     power = "off";
     oneLife = "off";
-    $("#oneLifeButton").css("background", "red");
+    $("#oneLifeButton").css("background", "green");
     $("#oneLifeButton").removeClass("fa fa-check");
     run = false;
     $("#startButton").css("background", "orange");
