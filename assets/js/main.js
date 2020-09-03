@@ -50,3 +50,20 @@ else if (power == "on") {
     $(".fourButtons").css("pointer-events", "none");
     }
 });
+
+//-- When clicking one life button--//
+
+$("#oneLifeButton").on("click", function() {
+    if (power == "on" && run == false) {
+        if (oneLife == "off") {
+            $("#oneLifeButton").css("background", "orange");
+        $("#oneLifeButton").addClass("fa fa-check");
+        oneLife = "on";
+        }
+    else if (oneLife == "on") {
+            $("#oneLifeButton").css("background", "red");
+            $("#oneLifeButton").removeClass("fa fa-check");
+            oneLife = "off";
+        }
+    }
+});
