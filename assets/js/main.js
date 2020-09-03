@@ -11,18 +11,18 @@ var runningMemory;
 var matching = true;
 var speed;
 
-class buttonColor {
+class colorButton {
     constructor(id, color) {
         this.id = id;
         this.color = color;
     }
 }
-var blue = new buttonColor(1, "blue");
-var green = new buttonColor(2, "green");
-var red = new buttonColor(3, "red");
-var yellow = new buttonColor(4, "yellow");
+var blue = new colorButton(1, "blue");
+var green = new colorButton(2, "green");
+var red = new colorButton(3, "red");
+var yellow = new colorButton(4, "yellow");
 
-//--When clicking power button--//
+//-- When clicking power button --//
 
 $("#powerSwitch").on("click", function() {
 if (power == "off") {
@@ -53,7 +53,7 @@ else if (power == "on") {
     }
 });
 
-//-- When clicking one life button--//
+//-- When clicking one life button --//
 
 $("#oneLifeButton").on("click", function() {
     if (power == "on" && run == false) {
@@ -70,7 +70,7 @@ $("#oneLifeButton").on("click", function() {
     }
 });
 
-//-- When clicking start button--//
+//-- When clicking start button --//
 
 $("#startButton").on("click", function() {
     if (power == "on") {
@@ -91,7 +91,7 @@ $("#startButton").on("click", function() {
     }
 });
 
-//--When clicking the coloured panels--//
+//-- When clicking the coloured panels --//
 
 $("div[id*='button']").on("click", function() {
     if (power == "on" && run) {
@@ -118,10 +118,10 @@ $("div[id*='button']").on("click", function() {
                     levelCount = 1;
                     newMemory();
                     console.log(memory);
-                    setTimeout(function() {runningMemory = setInterval(playMemory, tmepo);}, 1000);
+                    setTimeout(function() {runningMemory = setInterval(playMemory, speed);}, 1000);
                 }
                 else {
-                    setTimeout(function() {runningMemory = setInterval(playMemory, tempo);}, 1000);
+                    setTimeout(function() {runningMemory = setInterval(playMemory, speed);}, 1000);
                 }
             }
             else {
@@ -142,19 +142,19 @@ $("div[id*='button']").on("click", function() {
                                 case 2:
                                 case 3:
                                 case 4:
-                                    tempo = 1000;
+                                    speed = 1000;
                                         break;
                                 case 5:
-                                    tempo = 700;
+                                    speed = 700;
                                         break;
                                 case 10:
-                                    tempo = 500;
+                                    speed = 500;
                                         break;
                                 case 14:
-                                    tempo = 300;
+                                    speed = 300;
                                         break;
                             }
-                            setTimeout(function() {runningMemory = setInterval(playMemory, tempo);}, 1000);
+                            setTimeout(function() {runningMemory = setInterval(playMemory, speed);}, 1000);
                             $(".fourButtons").css("pointer-events", "none");
                         }
                     }
@@ -163,3 +163,104 @@ $("div[id*='button']").on("click", function() {
         }
     }
 });
+
+//-- Random selection of colours flashing associated with level --//
+
+function newMemory() {
+    var temp = Math.floor((Math.random() * 4) + 1);
+    switch(temp) {
+        case 1:
+            memory.push("blue");
+                break;
+        case 2:
+            memory.push("green");
+                break;
+        case 3:
+            memory.push("red");
+                break;
+        case 4:
+            memory.push("yellow");
+                break;
+    }
+}
+
+function playMemory() {
+    $("#textDisplay").html(levelCount);
+    tempColor = memory[memoryCount];
+    $("#soundButton" + tempColor).get(0).cloneNode().play();
+    $("#button" + tempColor).addClass("activated");
+    setTimeout(function() {$("#button" + tempColor).removeClass("activated");}, 250);
+    memoryCount++;
+    if (memoryCount == memory.length) {
+        clearInterval(runningMemory);
+        $(".fourButtons").css("pointer-events", "auto");
+    }
+}
+
+function win() {
+    $("#textDisplay").html("WIN");
+    $("#buttonBlue").addClass("activated");
+    setTimeout(function() {
+        $("#buttonBlue").removeCLass("activated");}, 250);
+    setTimeout(function() {
+        $("#buttonGreen").addClass("activated");}, 250);
+    setTimeout(function() {
+            $("#buttonGreen").removeClass("activated");}, 500);
+    setTimeout(function() {
+        $("#buttonRed").addClass("activated");}, 500);
+    setTimeout(function() {
+        $("#buttonRed").removeClass("activated");}, 750);
+    setTimeout(function() {
+        $("#buttonYellow").addClass("activated");}, 750);
+    setTimeout(function() {
+        $("#buttonYellow").removeClass("activated");}, 1000);
+    
+    setTimeout(function() {
+        $("#buttonBlue").addClass("activated");}, 1250);
+    setTimeout(function() {
+        $("#buttonGreen").addClass("activated");}, 1250);
+    setTimeout(function() {
+        $("#buttonRed").addClass("activated");}, 1250);
+    setTimeout(function() {
+        $("#buttonYellow").addClass("activated");}, 1250);
+    setTimeout(function() {
+        $("#buttonBlue").removeClass("activated");}, 1500);
+    setTimeout(function() {
+        $("#buttonGreen").removeClass("activated");}, 1500);
+    setTimeout(function() {
+        $("#buttonRed").removeClass("activated");}, 1500);
+    setTimeout(function() {
+        $("#buttonYellow").removeClass("activated");}, 1500);
+
+    setTimeout(function() {
+        $("#buttonBlue").addClass("activated");}, 1750);
+    setTimeout(function() {
+        $("#buttonGreen").addClass("activated");}, 1750);
+    setTimeout(function() {
+        $("#buttonRed").addClass("activated");}, 1750);
+    setTimeout(function() {
+        $("#buttonYellow").addClass("activated");}, 1750);
+    setTimeout(function() {
+        $("#buttonBlue").removeClass("activated");}, 2000);
+    setTimeout(function() {
+        $("#buttonGreen").removeClass("activated");}, 2000);
+    setTimeout(function() {
+        $("#buttonRed").removeClass("activated");}, 2000);
+    setTimeout(function() {
+        $("#buttonYellow").removeClass("activated");}, 2000);
+
+    setTimeout(function() {
+        user = [];
+        memory = [];
+        memoryCount = 0;
+        userCount = 0;
+        levelCount = 1;
+        $("#textDisplay").html("--");
+        matching = true;
+        clearInterva(runningMemory);
+        $(".fourButtons").css("pointer-events", "none");
+        newMemory();
+        console.log(memory);
+        setTimeout(function() {runningMemory = setInterval(playMemory, 1000);}, 1000);
+    }, 3000);
+}

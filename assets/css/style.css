@@ -26,28 +26,32 @@ body {
     opacity: 5;
 }
 
-#blueButton {
+.activated {
+    opacity: 0.5;
+}
+
+#buttonBlue {
     top: 0;
     left: 0;
     background-color: blue;
     border-radius: 100% 0 0 0;
 }
 
-#greenButton {
+#buttonGreen {
     top: 0;
     right: 0;
     background-color: green;
     border-radius: 0 100% 0 0;
 }
 
-#redButton {
+#buttonRed {
     bottom: 0;
     left: 0;
     background-color: red;
     border-radius: 0 0 0 100%;
 }
 
-#yellowButton {
+#buttonYellow {
     bottom: 0;
     right: 0;
     background-color: yellow;
