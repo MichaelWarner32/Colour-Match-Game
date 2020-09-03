@@ -56,12 +56,12 @@ else if (power == "on") {
 $("#oneLifeButton").on("click", function() {
     if (power == "on" && run == false) {
         if (oneLife == "off") {
-            $("#oneLifeButton").css("background", "orange");
+            $("#oneLifeButton").css("background", "red");
         $("#oneLifeButton").addClass("fa fa-check");
         oneLife = "on";
         }
     else if (oneLife == "on") {
-            $("#oneLifeButton").css("background", "red");
+            $("#oneLifeButton").css("background", "green");
             $("#oneLifeButton").removeClass("fa fa-check");
             oneLife = "off";
         }
