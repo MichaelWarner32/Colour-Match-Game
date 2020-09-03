@@ -11,9 +11,11 @@ var runningMemory;
 var matching = true;
 var speed;
 
-function buttonColor(id, color) {
-    this.id =id;
-    this.color = color;
+class buttonColor {
+    constructor(id, color) {
+        this.id = id;
+        this.color = color;
+    }
 }
 var blue = new buttonColor(1, "blue");
 var green = new buttonColor(2, "green");
@@ -65,5 +67,26 @@ $("#oneLifeButton").on("click", function() {
             $("#oneLifeButton").removeClass("fa fa-check");
             oneLife = "off";
         }
+    }
+});
+
+//-- When clicking start button--//
+
+$("#startButton").on("click", function() {
+    if (power == "on") {
+        $("#startButton").css("background", "blue");
+        run == true;
+        user = [];
+        memory = [];
+        memoryCount = 0;
+        userCount = 0;
+        levelCount = 1;
+        $("#textDisplay").html("--");
+        matching = true;
+        clearInterval(runningMemory);
+        $(".fourButtons").css("pointer-events", "none");
+        newMemory();
+        console.log(memory);
+        setTimeout(function() {runningMemory = setInterval(playMemory, 1000);}, 1000);
     }
 });
