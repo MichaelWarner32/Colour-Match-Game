@@ -96,7 +96,70 @@ $("#startButton").on("click", function() {
 $("div[id*='button']").on("click", function() {
     if (power == "on" && run) {
         if (event.which == 1) {
-            $("")
+            $("#sound" + this.id).get(0).cloneNode().play();
+            user.push(this.id.slice(6, 9));
+            userCount++;
+
+            for (i = 0; i < user.length; i++) {
+                if (memory[i] != user[i]) {
+                    matching = false;
+                }
+            }
+            if (!matching) {
+                $("#textDisplay").html("!!");
+                $("#soundFailButton").get(0).play();
+                user = [];
+                memoryCount = 0;
+                userCount = 0;
+                matching = true;
+                $(".fourButtons").css("pointer-events", "none");
+                if (oneLife = "on") {
+                    memory = [];
+                    levelCount = 1;
+                    newMemory();
+                    console.log(memory);
+                    setTimeout(function() {runningMemory = setInterval(playMemory, tmepo);}, 1000);
+                }
+                else {
+                    setTimeout(function() {runningMemory = setInterval(playMemory, tempo);}, 1000);
+                }
+            }
+            else {
+                if (userCount == memoryCount) {
+                    if (matching) {
+                        if (levelCount == 25) {
+                            win();
+                        }
+                        else {
+                            user = [];
+                            memoryCount = 0;
+                            userCount = 0;
+                            newMemory();
+                            levelCount++;
+
+                            switch(levelCount) {
+                                case 1:
+                                case 2:
+                                case 3:
+                                case 4:
+                                    tempo = 1000;
+                                        break;
+                                case 5:
+                                    tempo = 700;
+                                        break;
+                                case 10:
+                                    tempo = 500;
+                                        break;
+                                case 14:
+                                    tempo = 300;
+                                        break;
+                            }
+                            setTimeout(function() {runningMemory = setInterval(playMemory, tempo);}, 1000);
+                            $(".fourButtons").css("pointer-events", "none");
+                        }
+                    }
+                }
+            }
         }
     }
-})
+});
