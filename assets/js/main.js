@@ -90,3 +90,13 @@ $("#startButton").on("click", function() {
         setTimeout(function() {runningMemory = setInterval(playMemory, 1000);}, 1000);
     }
 });
+
+//--When clicking the coloured panels--//
+
+$("div[id*='button']").on("click", function() {
+    if (power == "on" && run) {
+        if (event.which == 1) {
+            $("")
+        }
+    }
+})
