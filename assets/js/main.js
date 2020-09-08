@@ -17,10 +17,10 @@ class colorButton {
         this.color = color;
     }
 }
-var blue = new colorButton(1, "blue");
-var green = new colorButton(2, "green");
-var red = new colorButton(3, "red");
-var yellow = new colorButton(4, "yellow");
+var blue = new colorButton(1, "Blue");
+var green = new colorButton(2, "Green");
+var red = new colorButton(3, "Red");
+var yellow = new colorButton(4, "Yellow");
 
 //-- When clicking power button --//
 
@@ -96,7 +96,7 @@ $("#startButton").on("click", function() {
 $("div[id*='button']").on("click", function() {
     if (power == "on" && run) {
         if (event.which == 1) {
-            $("#sound" + this.id).get(0).cloneNode().play();
+            $("#sound" + this.id).get(0).play();
             user.push(this.id.slice(6, 9));
             userCount++;
 
@@ -170,16 +170,16 @@ function newMemory() {
     var temp = Math.floor((Math.random() * 4) + 1);
     switch(temp) {
         case 1:
-            memory.push("blue");
+            memory.push("Blue");
                 break;
         case 2:
-            memory.push("green");
+            memory.push("Green");
                 break;
         case 3:
-            memory.push("red");
+            memory.push("Red");
                 break;
         case 4:
-            memory.push("yellow");
+            memory.push("Yellow");
                 break;
     }
 }
@@ -187,7 +187,7 @@ function newMemory() {
 function playMemory() {
     $("#textDisplay").html(levelCount);
     tempColor = memory[memoryCount];
-    $("#soundButton" + tempColor).get(0).cloneNode().play();
+    $(`#sound${tempColor}Button`)[0].play();
     $("#button" + tempColor).addClass("activated");
     setTimeout(function() {$("#button" + tempColor).removeClass("activated");}, 250);
     memoryCount++;
