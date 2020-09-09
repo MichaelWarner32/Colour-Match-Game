@@ -93,7 +93,9 @@ $("#startButton").on("click", function() {
 
 //-- When clicking the coloured panels --//
 
-$("div[id*='button']").on("click", function() {
+//-- Add event listeners for each coloured panel instead of below --//
+
+$("div[id*='#button']").on("click", function() {
     if (power == "on" && run) {
         if (event.which == 1) {
             $("#sound" + this.id).get(0).play();
@@ -188,7 +190,7 @@ function playMemory() {
     $("#textDisplay").html(levelCount);
     tempColor = memory[memoryCount];
     $(`#sound${tempColor}Button`)[0].play();
-    $("#button" + tempColor).addClass("activated");
+    $(`#button${tempColor}`).addClass("activated");
     setTimeout(function() {$("#button" + tempColor).removeClass("activated");}, 250);
     memoryCount++;
     if (memoryCount == memory.length) {
