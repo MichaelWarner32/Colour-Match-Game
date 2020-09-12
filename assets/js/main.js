@@ -10,6 +10,8 @@ var tempColor;
 var runningMemory;
 var matching = true;
 var speed;
+var order = [];
+var playerOrder = [];
 
 class colorButton {
     constructor(id, color) {
@@ -94,6 +96,20 @@ $("#startButton").on("click", function() {
 //-- When clicking the coloured panels --//
 
 //-- Add event listeners for each coloured panel instead of below --//
+
+buttonBlue.addEventListener('click', (event) => {
+    if (on) {
+        playerOrder.push(1);
+        check();
+        oneLife();
+        if (!win) {
+            setTimeout(() => {
+            clearColor();
+            }, 300);
+            
+        }
+    }
+})
 
 $("div[id*='#button']").on("click", function() {
     if (power == "on" && run) {
